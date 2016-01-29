@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B6BC840D1C544CCD0096C0BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6BC840C1C544CCD0096C0BA /* main.cpp */; };
+		B6BC84151C544D960096C0BA /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6BC84131C544D960096C0BA /* Socket.cpp */; };
+		B6BC841B1C54551F0096C0BA /* AServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6BC84161C54551F0096C0BA /* AServer.cpp */; };
+		B6BC841C1C54551F0096C0BA /* ServerTCP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6BC84191C54551F0096C0BA /* ServerTCP.cpp */; };
+		B6BC841F1C54F8A60096C0BA /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6BC841D1C54F8A60096C0BA /* Client.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,16 @@
 /* Begin PBXFileReference section */
 		B6BC84091C544CCD0096C0BA /* SocketHandler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SocketHandler; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BC840C1C544CCD0096C0BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B6BC84131C544D960096C0BA /* Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Socket.cpp; sourceTree = "<group>"; };
+		B6BC84141C544D960096C0BA /* Socket.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Socket.hpp; sourceTree = "<group>"; };
+		B6BC84161C54551F0096C0BA /* AServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AServer.cpp; sourceTree = "<group>"; };
+		B6BC84171C54551F0096C0BA /* AServer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AServer.hpp; sourceTree = "<group>"; };
+		B6BC84181C54551F0096C0BA /* IServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IServer.h; sourceTree = "<group>"; };
+		B6BC84191C54551F0096C0BA /* ServerTCP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerTCP.cpp; sourceTree = "<group>"; };
+		B6BC841A1C54551F0096C0BA /* ServerTCP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ServerTCP.hpp; sourceTree = "<group>"; };
+		B6BC841D1C54F8A60096C0BA /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
+		B6BC841E1C54F8A60096C0BA /* Client.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Client.hpp; sourceTree = "<group>"; };
+		B6BC84201C5500E70096C0BA /* Function.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Function.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +71,17 @@
 		B6BC840B1C544CCD0096C0BA /* SocketHandler */ = {
 			isa = PBXGroup;
 			children = (
+				B6BC84201C5500E70096C0BA /* Function.hpp */,
+				B6BC84161C54551F0096C0BA /* AServer.cpp */,
+				B6BC84171C54551F0096C0BA /* AServer.hpp */,
+				B6BC84181C54551F0096C0BA /* IServer.h */,
+				B6BC84191C54551F0096C0BA /* ServerTCP.cpp */,
+				B6BC841A1C54551F0096C0BA /* ServerTCP.hpp */,
 				B6BC840C1C544CCD0096C0BA /* main.cpp */,
+				B6BC84131C544D960096C0BA /* Socket.cpp */,
+				B6BC84141C544D960096C0BA /* Socket.hpp */,
+				B6BC841D1C54F8A60096C0BA /* Client.cpp */,
+				B6BC841E1C54F8A60096C0BA /* Client.hpp */,
 			);
 			path = SocketHandler;
 			sourceTree = "<group>";
@@ -118,7 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BC841C1C54551F0096C0BA /* ServerTCP.cpp in Sources */,
+				B6BC84151C544D960096C0BA /* Socket.cpp in Sources */,
+				B6BC841F1C54F8A60096C0BA /* Client.cpp in Sources */,
 				B6BC840D1C544CCD0096C0BA /* main.cpp in Sources */,
+				B6BC841B1C54551F0096C0BA /* AServer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +235,8 @@
 		B6BC84111C544CCD0096C0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.59.0/include/;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-std=c++1y";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +244,8 @@
 		B6BC84121C544CCD0096C0BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.59.0/include/;
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-std=c++1y";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -237,6 +269,7 @@
 				B6BC84121C544CCD0096C0BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
